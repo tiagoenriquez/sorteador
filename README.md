@@ -1,3 +1,20 @@
+# Sorteador
+
+Este projeto tem a pretenção de ser uma aplicação que permite sorteio de elementos por categorias.
+
+## Como deve funcionar:
+
+Na tela inicial, o usuário vai inserindo elementos com informação de nome e de categorias, informa o número de grupos para os quais os elementos vão ser sorteados e a aplicação se encarrega de sortear os elementos para um dos grupos de maneira que haja equilíbrio entre as categorias nos diferentes grupos.
+
+# Exemplo:
+
+Digamos que um setor ou uma instituição tenha funcionários com diferentes funções e precise decidir quem folga no Natal e quem folga no Ano Novo. As diferentes funções precisam estar uniformemente distribuídas nos diferentes grupos.
+
+# Páginas:
+
+ - Página Inicial: o usuário informa elemento por elemento passando informações de nome e categoria e a quantidade de grupos, além de submeter para sorteio.
+ - Resultado: mostra os elementos sorteados dentro de seus respectivos grupos.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

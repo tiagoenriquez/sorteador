@@ -1,0 +1,12 @@
+Tela inicial:
+  campo de seleção de categoria
+  campo para digitar quantidade de grupos
+  campo para digitar nome do elemento
+  campo para digitar categoria do elemento
+  botão para adicionar elemento
+  botão para remover elemento
+  botão para submeter sorteio
+  
+Modelos:
+  Elemento: chave, nome, categoria
+  Grupo: chave, elemento
