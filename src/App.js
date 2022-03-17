@@ -6,7 +6,8 @@ import { useState } from "react";
 function App() {
 
   const [resultado, setResultado] = useState(false);
-  const [categorias, setCategorias] = useState([{chave: 1, nome: 'Europa'}, {chave: 2, nome: 'América do Sul'}, {chave: 3, nome: 'Ásia'}, {chave: 4, nome: 'África'}, {chave: 5, nome: 'América do Norte'}]);
+  const [categorias, setCategorias] = useState([]);
+  const [elementos, setElementos] = useState([]);
 
   return (
     <ThemeProvider theme={tema}>
@@ -16,6 +17,7 @@ function App() {
         <Inicial
           categorias={categorias}
           valor={'-'}
+          elementos={elementos}
         />
       }
     </ThemeProvider>

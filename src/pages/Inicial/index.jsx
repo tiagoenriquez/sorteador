@@ -1,7 +1,8 @@
-import { Elemento, Seletor, Titulo } from "../../components";
+import { Container, Seletor, Titulo } from "../../components";
+import Botao from "../../components/Botao";
 import { InicialStyled } from "./styled";
 
-function Inicial({ valor, categorias }) {
+function Inicial({ valor, categorias, elementos }) {
 
     return (
         <InicialStyled>
@@ -10,7 +11,11 @@ function Inicial({ valor, categorias }) {
                 valor={valor}
                 categorias={categorias}
             />
-            <Elemento />
+            <Container elementos={elementos} />
+            <Botao
+                grande={true}
+                etiqueta='Sortear'
+            />
         </InicialStyled>
     );
 }

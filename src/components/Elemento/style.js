@@ -5,5 +5,4 @@ export const ElementoStyled = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
 `;
