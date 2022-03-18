@@ -2,7 +2,7 @@ import { BotaoMaisStyled, BotaoMenosStyled, BotaoNormalStyled } from "./style";
 import InformacaoBotao from "../InformacaoBotao";
 import { useState } from "react";
 
-function Botao({ perfil, etiqueta, informacao, funcao }) {
+function Botao({ perfil, etiqueta, informacao, funcao, classeBotao }) {
 
     const [mostraInformacao, setMostraInformacao] = useState(false);
 
@@ -20,6 +20,7 @@ function Botao({ perfil, etiqueta, informacao, funcao }) {
                 <BotaoNormalStyled
                     onMouseOver={mostrarInformacao}
                     onMouseOut={esconderInformacao}
+                    onClick={funcao}
                 >
                     {etiqueta}
                     <InformacaoBotao
@@ -49,6 +50,9 @@ function Botao({ perfil, etiqueta, informacao, funcao }) {
                 <BotaoMenosStyled
                     onMouseOver={mostrarInformacao}
                     onMouseOut={esconderInformacao}
+                    onClick={funcao}
+                    id={classeBotao}
+
                 >
                     {etiqueta}
                     <InformacaoBotao

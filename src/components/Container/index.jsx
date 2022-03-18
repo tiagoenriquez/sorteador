@@ -1,7 +1,7 @@
 import Elemento from "../Elemento";
 import { ContainerStyled } from "./style";
 
-function Container({ elementos, adicionarElementoNovo, adicionarCategoriaNova, elementoNovo, categoriaNova }) {
+function Container({ elementos, obterElementoNovo, obterCategoriaNova, adicionarElementoNovo, elementoNovo, categoriaNova, removerElemento }) {
 
     return (
         <ContainerStyled>
@@ -9,12 +9,17 @@ function Container({ elementos, adicionarElementoNovo, adicionarCategoriaNova, e
                 elementos.map((elemento) => 
                     <Elemento
                         key={elemento.chave}
+                        elemento={elemento.nome}
+                        categoria={elemento.categoria}
+                        removerElemento={removerElemento}
+                        classeBotao={elemento.chave}
                     />
                 )
             }
             <Elemento
+                obterElemento={obterElementoNovo}
+                obterCategoria={obterCategoriaNova}
                 adicionarElemento={adicionarElementoNovo}
-                adicionarCategoria={adicionarCategoriaNova}
                 elemento={elementoNovo}
                 categoria={categoriaNova}
             />

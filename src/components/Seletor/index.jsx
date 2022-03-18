@@ -1,6 +1,6 @@
 import { SeletorStyled } from "./style";
 
-function Seletor({ valor, categorias }) {
+function Seletor({ valor, categorias, funcao }) {
     return (
         <SeletorStyled value={valor}>
             {
@@ -8,8 +8,9 @@ function Seletor({ valor, categorias }) {
                 <option 
                     key={categoria.chave}
                     value={categoria.nome}
+                    onClick={funcao}
                 >
-                    {categoria.nome}
+                    {categoria.nome} - {categoria.ocorrencias}
                 </option>)
             }
         </SeletorStyled>
