@@ -2,6 +2,7 @@ import { ThemeProvider } from "styled-components";
 import tema from "./tema";
 import { Inicial, Resultado } from "./pages";
 import { useState } from "react";
+import { sortear } from "./services/SorteioService";
 
 function App() {
 
@@ -10,7 +11,7 @@ function App() {
   const [elementos, setElementos] = useState([]);
   const [categoriaNova, setCategoriaNova] = useState("");
   const [elementoNovo, setElementoNovo] = useState("");
-  const [quantidade, setQuantidade] = useState(0);
+  const [grupos, setGrupos] = useState(0);
   
   function handleElementoNovo(evento) {
     setElementoNovo(evento.target.value);
@@ -79,19 +80,21 @@ function App() {
     }
   }
 
-  function handleQuantidade(evento) {
-    setQuantidade(parseInt(evento.target.value));
+  function handleGrupos(evento) {
+    setGrupos(parseInt(evento.target.value));
   }
 
-  function sortear(evento) {
-    console.log(evento);
+  function sendSortear() {
+    let elementosSorteados = sortear(elementos, categorias, grupos);
+    console.log(elementosSorteados);
+    setElementos(elementosSorteados);
     setResultado(true);
   }
 
   return (
     <ThemeProvider theme={tema}>
       {
-        resultado ? <Resultado />
+        resultado ? <Resultado elementos={elementos} />
         : 
         <Inicial
           categorias={categorias}
@@ -104,9 +107,10 @@ function App() {
           categoriaNova={categoriaNova}
           selecionarCategoria={selecionarCategoria}
           removerElemento={removerElemento}
-          quantidade={quantidade}
-          obterQuantidade={handleQuantidade}
-          sortear={sortear}
+          grupos={grupos}
+          obterGrupos={handleGrupos}
+          sortear={sendSortear}
+          foco={true}
         />
       }
     </ThemeProvider>

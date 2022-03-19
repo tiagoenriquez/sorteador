@@ -1,7 +1,7 @@
 import Elemento from "../Elemento";
 import { ContainerStyled } from "./style";
 
-function Container({ elementos, obterElementoNovo, obterCategoriaNova, adicionarElementoNovo, elementoNovo, categoriaNova, removerElemento }) {
+function Container({ elementos, obterElementoNovo, obterCategoriaNova, adicionarElementoNovo, elementoNovo, categoriaNova, removerElemento, foco }) {
 
     return (
         <ContainerStyled>
@@ -22,6 +22,7 @@ function Container({ elementos, obterElementoNovo, obterCategoriaNova, adicionar
                 adicionarElemento={adicionarElementoNovo}
                 elemento={elementoNovo}
                 categoria={categoriaNova}
+                foco={foco}
             />
         </ContainerStyled>
     );

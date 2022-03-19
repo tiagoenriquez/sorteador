@@ -1,6 +1,7 @@
-function Resultado() {
+function Resultado({elementos}) {
     return (
-        <h1>Resultado</h1>
+        <div>
+        </div>
     );
 }
 

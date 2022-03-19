@@ -14,9 +14,10 @@ function Inicial({
     categoriaNova, 
     selecionarCategoria, 
     removerElemento, 
-    obterQuantidade,
-    quantidade,
-    sortear 
+    obterGrupos,
+    grupos,
+    sortear,
+    foco 
 }) {
 
     const NORMAL = 1;
@@ -37,11 +38,12 @@ function Inicial({
                 elementoNovo={elementoNovo}
                 categoriaNova={categoriaNova}
                 removerElemento={removerElemento}
+                foco={foco}
             />
             <CampoTexto
-                etiqueta={'Quantidade'}
-                funcao={obterQuantidade}
-                valor={quantidade}
+                etiqueta={'Grupos'}
+                funcao={obterGrupos}
+                valor={grupos}
             />
             <Botao
                 perfil={NORMAL}

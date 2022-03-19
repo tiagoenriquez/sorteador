@@ -2,7 +2,7 @@ import Botao from "../Botao";
 import CampoTexto from "../CampoTexto";
 import { ElementoStyled } from "./style";
 
-function Elemento({ obterElemento, obterCategoria, adicionarElemento, elemento, categoria, removerElemento, classeBotao }) {
+function Elemento({ obterElemento, obterCategoria, adicionarElemento, elemento, categoria, removerElemento, classeBotao, foco }) {
 
     const MAIS = 2, MENOS = 3;
 
@@ -12,6 +12,7 @@ function Elemento({ obterElemento, obterCategoria, adicionarElemento, elemento, 
                 etiqueta={'Elemento'}
                 funcao={obterElemento}
                 valor={elemento}
+                foco={foco}
             />
             <CampoTexto
                 etiqueta={'Categoria'}
