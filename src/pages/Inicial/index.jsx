@@ -41,7 +41,7 @@ function Inicial({
                 foco={foco}
             />
             <CampoTexto
-                etiqueta={'Grupos'}
+                etiqueta={'Nº de Grupos'}
                 funcao={obterGrupos}
                 valor={grupos}
             />

@@ -27,7 +27,6 @@ function Botao({ perfil, etiqueta, informacao, funcao, classeBotao }) {
                         informacao={informacao}
                         aparecendo={mostraInformacao}
                     />
-                    <InformacaoBotao informacao={informacao} />
                 </BotaoNormalStyled>
             );
         case 2:

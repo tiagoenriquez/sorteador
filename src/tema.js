@@ -2,7 +2,7 @@ const tema = {
     cores: {
         principal: 'rgb(0, 128, 0)',
         escuro: 'rgb(0, 64, 0)',
-        claro: 'rgb(128, 191, 128)',
+        claro: 'rgb(191, 223, 191)',
         perigo: 'rgb(255, 0, 0)',
         perigoEscuro: 'rgb(128, 0 ,0 )',
     },

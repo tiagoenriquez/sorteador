@@ -1,6 +1,7 @@
 import { SeletorStyled } from "./style";
 
 function Seletor({ valor, categorias, funcao }) {
+
     return (
         <SeletorStyled value={valor}>
             {

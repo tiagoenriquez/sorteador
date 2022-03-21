@@ -11,7 +11,7 @@ function App() {
   const [elementos, setElementos] = useState([]);
   const [categoriaNova, setCategoriaNova] = useState("");
   const [elementoNovo, setElementoNovo] = useState("");
-  const [grupos, setGrupos] = useState(0);
+  const [grupos, setGrupos] = useState("");
   
   function handleElementoNovo(evento) {
     setElementoNovo(evento.target.value);
@@ -86,32 +86,44 @@ function App() {
 
   function sendSortear() {
     let elementosSorteados = sortear(elementos, categorias, grupos);
-    console.log(elementosSorteados);
     setElementos(elementosSorteados);
     setResultado(true);
+  }
+
+  function resetar(evento) {
+    if (evento) {
+      setResultado(false);
+      setElementos([]);
+      setCategorias([]);
+      setGrupos('');
+    }
   }
 
   return (
     <ThemeProvider theme={tema}>
       {
-        resultado ? <Resultado elementos={elementos} />
+        resultado ? 
+          <Resultado
+            elementos={elementos}
+            resetar={resetar}
+          />
         : 
-        <Inicial
-          categorias={categorias}
-          valor={'-'}
-          elementos={elementos}
-          obterElementoNovo={handleElementoNovo}
-          obterCategoriaNova={handleCategoriaNova}
-          adicionarElementoNovo={adicionarElemento}
-          elementoNovo={elementoNovo}
-          categoriaNova={categoriaNova}
-          selecionarCategoria={selecionarCategoria}
-          removerElemento={removerElemento}
-          grupos={grupos}
-          obterGrupos={handleGrupos}
-          sortear={sendSortear}
-          foco={true}
-        />
+          <Inicial
+            categorias={categorias}
+            valor={'-'}
+            elementos={elementos}
+            obterElementoNovo={handleElementoNovo}
+            obterCategoriaNova={handleCategoriaNova}
+            adicionarElementoNovo={adicionarElemento}
+            elementoNovo={elementoNovo}
+            categoriaNova={categoriaNova}
+            selecionarCategoria={selecionarCategoria}
+            removerElemento={removerElemento}
+            grupos={grupos}
+            obterGrupos={handleGrupos}
+            sortear={sendSortear}
+            foco={true}
+          />
       }
     </ThemeProvider>
   );

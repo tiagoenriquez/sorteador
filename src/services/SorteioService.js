@@ -1,7 +1,6 @@
 export function sortear(elementos, categorias, grupos) {
     let categoriasOrdenadas = ordenarCategorias(categorias);
     let elementosOrdenados = sortearElementos(elementos, categoriasOrdenadas);
-    console.log(elementosOrdenados);
     let gruposSorteados = sortearGrupos(grupos);
     return agruparElementos(elementosOrdenados, gruposSorteados);
 }

@@ -2,14 +2,12 @@ import Botao from "../Botao";
 import CampoTexto from "../CampoTexto";
 import { ElementoStyled } from "./style";
 
-function Elemento({ obterElemento, obterCategoria, adicionarElemento, elemento, categoria, removerElemento, classeBotao, foco }) {
-
-    const MAIS = 2, MENOS = 3;
+function Elemento({ obterElemento, obterCategoria, elemento, categoria, classeBotao, foco, botao }) {
 
     return (
         <ElementoStyled>
             <CampoTexto 
-                etiqueta={'Elemento'}
+                etiqueta={'Nome'}
                 funcao={obterElemento}
                 valor={elemento}
                 foco={foco}
@@ -20,16 +18,10 @@ function Elemento({ obterElemento, obterCategoria, adicionarElemento, elemento, 
                 valor={categoria}
             />
             <Botao
-                perfil={MAIS}
-                etiqueta={'+'}
-                informacao={'Adiciona o elemento na lista para ser sorteado e mais um campo para edição de elemento.'}
-                funcao={adicionarElemento}
-            />
-            <Botao
-                perfil={MENOS}
-                etiqueta={'-'}
-                informacao={'Remove o elemento da lista de elementos a serem sorteados.'}
-                funcao={removerElemento}
+                perfil={botao.perfil}
+                etiqueta={botao.etiqueta}
+                informacao={botao.informacao}
+                funcao={botao.funcao}
                 classeBotao={classeBotao}
             />
         </ElementoStyled>
