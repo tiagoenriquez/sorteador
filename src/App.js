@@ -34,23 +34,23 @@ function App() {
   }
 
   function atualizarCategorias(todosElementos) {
-    let categoriasString = [];
+    let nomesCategorias = [];
     todosElementos.forEach((elemento) => {
-      if (!categoriasString.includes(elemento.categoria)) {
-        categoriasString.push(elemento.categoria);
+      if (!nomesCategorias.includes(elemento.categoria)) {
+        nomesCategorias.push(elemento.categoria);
       }
     });
-    let categoriasObjeto = [];
-    categoriasString.forEach((categoria, indice) => {
+    let categoriasAtualizadas = [];
+    nomesCategorias.forEach((categoria, indice) => {
       let ocorrencias = 0;
       todosElementos.forEach((elemento) => {
         if (elemento.categoria === categoria) {
           ocorrencias++;
         }
       });
-      categoriasObjeto.push({chave: indice, nome: categoria, ocorrencias: ocorrencias});
+      categoriasAtualizadas.push({chave: indice, nome: categoria, ocorrencias: ocorrencias});
     });
-    setCategorias(categoriasObjeto);
+    setCategorias(categoriasAtualizadas);
   }
 
   function limparNovosCampos() {
@@ -115,6 +115,11 @@ function App() {
   function alterarCategoria(evento) {
     if (evento) {
       console.log(evento.target.value);
+      let elementosAlterados = elementos;
+      let indice = evento.target.id.replace('categoria', '');
+      elementosAlterados[indice].categoria = evento.target.value;
+      setElementos(elementosAlterados);
+      atualizarCategorias(elementos);
     }
   }
 
