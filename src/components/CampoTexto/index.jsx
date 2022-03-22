@@ -1,6 +1,6 @@
 import { CampoTextoStyled } from "./style";
 
-function CampoTexto({ etiqueta, funcao, valor, foco }) {
+function CampoTexto({ etiqueta, funcao, valor, foco, id }) {
 
     return (
         <CampoTextoStyled
@@ -8,6 +8,7 @@ function CampoTexto({ etiqueta, funcao, valor, foco }) {
             placeholder={etiqueta}
             value={valor}
             autoFocus={foco}
+            id={id}
         />
     );
 }

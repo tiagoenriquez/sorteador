@@ -1,7 +1,7 @@
 import { ThemeProvider } from "styled-components";
 import tema from "./tema";
 import { Inicial, Resultado } from "./pages";
-import { useState } from "react";
+import {  useState } from "react";
 import { sortear } from "./services/SorteioService";
 
 function App() {
@@ -12,6 +12,7 @@ function App() {
   const [categoriaNova, setCategoriaNova] = useState("");
   const [elementoNovo, setElementoNovo] = useState("");
   const [grupos, setGrupos] = useState("");
+  const [elementoAlterado, setElementoAlterado] = useState("");
   
   function handleElementoNovo(evento) {
     setElementoNovo(evento.target.value);
@@ -62,13 +63,14 @@ function App() {
       adicionarNovo();
       incrementarElementos();
       atualizarCategorias(elementos);
+      document.getElementById('elemento').focus();
       limparNovosCampos();
     }
   }
 
   function selecionarCategoria(evento) {
     if (evento) {
-      setCategoriaNova(evento.target.value);
+      setCategoriaNova(evento.target.innerText);
     }
   }
 
@@ -99,6 +101,23 @@ function App() {
     }
   }
 
+  function alterarElemento(evento) {
+    if (evento) {
+      setElementoAlterado(evento.target.value);
+      let elementosAlterado = elementos;
+      let indice = evento.target.id.replace('elemento', '');
+      elementosAlterado[indice].nome = evento.target.value;
+      setElementos(elementosAlterado);
+      console.log(elementoAlterado);
+    }
+  }
+
+  function alterarCategoria(evento) {
+    if (evento) {
+      console.log(evento.target.value);
+    }
+  }
+
   return (
     <ThemeProvider theme={tema}>
       {
@@ -123,6 +142,9 @@ function App() {
             obterGrupos={handleGrupos}
             sortear={sendSortear}
             foco={true}
+            resetar={resetar}
+            alterarElemento={alterarElemento}
+            alterarCategoria={alterarCategoria}
           />
       }
     </ThemeProvider>

@@ -1,4 +1,4 @@
-import { BotaoMaisStyled, BotaoMenosStyled, BotaoNormalStyled } from "./style";
+import { BotaoMaisStyled, BotaoMenosStyled, BotaoNormalMenosStyled, BotaoNormalStyled } from "./style";
 import InformacaoBotao from "../InformacaoBotao";
 import { useState } from "react";
 
@@ -60,6 +60,17 @@ function Botao({ perfil, etiqueta, informacao, funcao, classeBotao }) {
                     />
                     <InformacaoBotao informacao={informacao} />
                 </BotaoMenosStyled>
+            );
+        case 4:
+            return (
+                <BotaoNormalMenosStyled
+                    onClick={funcao}
+                    id={classeBotao}
+
+                >
+                    {etiqueta}
+                    <InformacaoBotao informacao={informacao} />
+                </BotaoNormalMenosStyled>
             );
         default:
             return null;

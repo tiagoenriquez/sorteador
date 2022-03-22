@@ -17,10 +17,14 @@ function Inicial({
     obterGrupos,
     grupos,
     sortear,
-    foco 
+    foco,
+    resetar,
+    alterarElemento,
+    alterarCategoria 
 }) {
 
     const NORMAL = 1;
+    const RESET = 4;
 
     return (
         <InicialStyled>
@@ -39,6 +43,8 @@ function Inicial({
                 categoriaNova={categoriaNova}
                 removerElemento={removerElemento}
                 foco={foco}
+                alterarElemento={alterarElemento}
+                alterarCategoria={alterarCategoria}
             />
             <CampoTexto
                 etiqueta={'Nº de Grupos'}
@@ -50,6 +56,11 @@ function Inicial({
                 etiqueta='Sortear'
                 informacao={'Manda os elementos para sorteio e redireciona para a página de resultado do sorteio.'}
                 funcao={sortear}
+            />
+            <Botao
+                perfil={RESET}
+                etiqueta='Resetar'
+                funcao={resetar}
             />
         </InicialStyled>
     );

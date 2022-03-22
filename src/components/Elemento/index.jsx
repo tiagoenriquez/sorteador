@@ -2,7 +2,7 @@ import Botao from "../Botao";
 import CampoTexto from "../CampoTexto";
 import { ElementoStyled } from "./style";
 
-function Elemento({ obterElemento, obterCategoria, elemento, categoria, classeBotao, foco, botao }) {
+function Elemento({ obterElemento, obterCategoria, elemento, categoria, classeBotao, foco, botao, idElemento, idCategoria }) {
 
     return (
         <ElementoStyled>
@@ -11,11 +11,13 @@ function Elemento({ obterElemento, obterCategoria, elemento, categoria, classeBo
                 funcao={obterElemento}
                 valor={elemento}
                 foco={foco}
+                id={idElemento}
             />
             <CampoTexto
                 etiqueta={'Categoria'}
                 funcao={obterCategoria}
                 valor={categoria}
+                id={idCategoria}
             />
             <Botao
                 perfil={botao.perfil}

@@ -8,4 +8,5 @@ export const CampoTextoStyled = styled.input`
   font-family: ${(props) => props.theme.familiaFonte.principal};
   color: ${(props) => props.theme.cores.escuro};
   text-align: center;
+  border: 1px solid ${(props) => props.theme.cores.principal};
 `;

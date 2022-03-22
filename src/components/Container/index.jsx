@@ -1,7 +1,18 @@
 import Elemento from "../Elemento";
 import { ContainerStyled } from "./style";
 
-function Container({ elementos, obterElementoNovo, obterCategoriaNova, adicionarElementoNovo, elementoNovo, categoriaNova, removerElemento, foco }) {
+function Container({ 
+    elementos, 
+    obterElementoNovo, 
+    obterCategoriaNova, 
+    adicionarElementoNovo, 
+    elementoNovo, 
+    categoriaNova, 
+    removerElemento, 
+    foco,
+    alterarElemento,
+    alterarCategoria
+ }) {
 
     function obterBotao(carater) {
         if (carater === '+') {
@@ -34,6 +45,7 @@ function Container({ elementos, obterElementoNovo, obterCategoriaNova, adicionar
                 categoria={categoriaNova}
                 foco={foco}
                 botao={MAIS}
+                idElemento={'elemento'}
             />
             {
                 elementos.map((elemento) => 
@@ -44,6 +56,10 @@ function Container({ elementos, obterElementoNovo, obterCategoriaNova, adicionar
                         removerElemento={removerElemento}
                         classeBotao={elemento.chave}
                         botao={MENOS}
+                        obterElemento={alterarElemento}
+                        obterCategoria={alterarCategoria}
+                        idElemento={`elemento${elemento.chave}`}
+                        idCategoria={`categoria${elemento.chave}`}
                     />
                 )
             }

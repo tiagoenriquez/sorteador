@@ -13,6 +13,19 @@ export const BotaoNormalStyled = styled.button`
   }
 `;
 
+export const BotaoNormalMenosStyled = styled.button`
+  height: ${(props) => props.theme.altura.principal};
+  width: 192px;
+  margin: ${(props) => props.theme.margens.principal};
+  font-size: ${(props) => props.theme.tamanhoFonte.principal};
+  font-family: ${(props) => props.theme.familiaFonte.principal};
+  background-color: ${(props) => props.theme.cores.perigo};
+  color: white;
+  : hover {
+    background-color: ${(props) => props.theme.cores.perigoEscuro};
+  }
+`;
+
 export const BotaoMaisStyled = styled.button`
   height: ${(props) => props.theme.altura.principal};
   width: 48px;
