@@ -7,6 +7,7 @@ export const SeletorContainerStyled = styled.div`
 
 export const TituloSeletorStyled = styled.div`
   display: flex;
+  justify-content: center;
   align-items: center;
   height: ${(props) => props.theme.altura.principal};
   width: 192px;
@@ -30,6 +31,7 @@ export const OpcaoStyled = styled.li`
   list-style: none;
   display: flex;
   align-items: center;
+  justify-content: center;
   height: ${(props) => props.theme.altura.principal};
   width: 192px;
   font-size: ${(props) => props.theme.tamanhoFonte.principal};

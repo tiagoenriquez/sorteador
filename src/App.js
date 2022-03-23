@@ -13,6 +13,7 @@ function App() {
   const [elementoNovo, setElementoNovo] = useState("");
   const [grupos, setGrupos] = useState("");
   const [elementoAlterado, setElementoAlterado] = useState("");
+  const [erro, setErro] = useState({ existe: false, mensagem: ""} );
   
   function handleElementoNovo(evento) {
     setElementoNovo(evento.target.value);
@@ -20,6 +21,26 @@ function App() {
 
   function handleCategoriaNova(evento) {
     setCategoriaNova(evento.target.value);
+  }
+
+  function elementoExiste(elementoDigitado) {
+    let elementosAdicionados = [];
+    elementos.forEach((elemento) => {
+      elementosAdicionados.push(elemento.nome);
+    });
+    if (elementosAdicionados.includes(elementoDigitado)) {
+      setErro({
+        existe: true,
+        mensagem:'Esta aplicação não permite dois elementos com o mesmo nome!!!'
+      });
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  function fecharErro() {
+    setErro({ existe: false, mensagem: '' });
   }
 
   function adicionarNovo() {
@@ -60,11 +81,13 @@ function App() {
 
   function adicionarElemento(evento) {
     if (evento) {
-      adicionarNovo();
-      incrementarElementos();
-      atualizarCategorias(elementos);
-      document.getElementById('elemento').focus();
-      limparNovosCampos();
+      if (!elementoExiste(elementoNovo)) {
+        adicionarNovo();
+        incrementarElementos();
+        atualizarCategorias(elementos);
+        document.getElementById('elemento').focus();
+        limparNovosCampos();
+      }
     }
   }
 
@@ -103,18 +126,19 @@ function App() {
 
   function alterarElemento(evento) {
     if (evento) {
-      setElementoAlterado(evento.target.value);
-      let elementosAlterado = elementos;
-      let indice = evento.target.id.replace('elemento', '');
-      elementosAlterado[indice].nome = evento.target.value;
-      setElementos(elementosAlterado);
-      console.log(elementoAlterado);
+      if (!elementoExiste(evento.target.value)) {
+        setElementoAlterado(evento.target.value);
+        let elementosAlterado = elementos;
+        let indice = evento.target.id.replace('elemento', '');
+        elementosAlterado[indice].nome = evento.target.value;
+        setElementos(elementosAlterado);
+        console.log(elementoAlterado);
+      }
     }
   }
 
   function alterarCategoria(evento) {
     if (evento) {
-      console.log(evento.target.value);
       let elementosAlterados = elementos;
       let indice = evento.target.id.replace('categoria', '');
       elementosAlterados[indice].categoria = evento.target.value;
@@ -150,6 +174,8 @@ function App() {
             resetar={resetar}
             alterarElemento={alterarElemento}
             alterarCategoria={alterarCategoria}
+            erro={erro}
+            fecharErro={fecharErro}
           />
       }
     </ThemeProvider>

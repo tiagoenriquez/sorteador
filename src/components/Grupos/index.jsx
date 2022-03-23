@@ -4,8 +4,6 @@ import { GruposStyled, GrupoStyled } from "./style";
 
 function Grupos({ titulos, elementos }) {
 
-    const grupos = obterGrupos(elementos);
-
     function obterGrupos(elementos) {
         let grupos = 0;
         elementos.forEach((elemento) => {
@@ -25,15 +23,14 @@ function Grupos({ titulos, elementos }) {
         return listaGrupos;
     }
 
+    const grupos = obterGrupos(elementos);
+
     return(
-        <GruposStyled >
+        <GruposStyled>
             {
                 grupos.map((grupo) => 
-                    <GrupoStyled>
-                        <Subtitulo 
-                            key={grupo.chave}
-                            valor={grupo.nome}
-                        />
+                    <GrupoStyled key={grupo.chave}>
+                        <Subtitulo valor={grupo.nome} />
                         <Tabela
                             titulos={titulos}
                             elementos={grupo.elementos}

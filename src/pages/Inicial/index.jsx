@@ -1,6 +1,7 @@
 import { Container, Seletor, Titulo } from "../../components";
 import Botao from "../../components/Botao";
 import CampoTexto from "../../components/CampoTexto";
+import Erro from "../../components/Erro";
 import { InicialStyled } from "./styled";
 
 function Inicial({ 
@@ -20,7 +21,9 @@ function Inicial({
     foco,
     resetar,
     alterarElemento,
-    alterarCategoria 
+    alterarCategoria,
+    erro,
+    fecharErro 
 }) {
 
     const NORMAL = 1;
@@ -29,6 +32,13 @@ function Inicial({
     return (
         <InicialStyled>
             <Titulo valor={'Sorteador'} />
+            {
+                erro.existe &&
+                    <Erro 
+                        mensagem={erro.mensagem}
+                        fechar={fecharErro}
+                    />
+            }
             <Seletor
                 valor={valor}
                 categorias={categorias}
