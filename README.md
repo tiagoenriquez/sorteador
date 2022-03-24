@@ -1,6 +1,7 @@
 # Sorteador
 
 Este projeto tem a pretenção de ser uma aplicação que permite sorteio de elementos por categorias.
+Você pode conferir o funcionamento pelo endereço http://sorteador-por-categoria.herokuapp.com/.
 
 ## Como deve funcionar:
 
