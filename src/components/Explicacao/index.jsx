@@ -1,7 +1,7 @@
 import Botao from "../Botao";
 import { CaixaExplicacaoStyled, ExplicacaoStyled } from "./style";
 
-function Explicação({ fechar }) {
+function Explicacao({ fechar }) {
     return (
         <CaixaExplicacaoStyled>
             <div>
@@ -27,4 +27,4 @@ function Explicação({ fechar }) {
     );
 }
 
-export default Explicação;
+export default Explicacao;

@@ -12,7 +12,7 @@ export const TituloSeletorStyled = styled.div`
   height: ${(props) => props.theme.altura.principal};
   width: 192px;
   margin: 0;
-  padding: ${(props) => props.theme.margens.principal};
+  padding: 0px 5px 0px 5px;
   font-size: ${(props) => props.theme.tamanhoFonte.principal};
   placeholder-color: ${(props) => props.theme.cores.claro};
   font-family: ${(props) => props.theme.familiaFonte.principal};

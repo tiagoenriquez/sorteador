@@ -3,7 +3,7 @@ import tema from "./tema";
 import { Inicial, Resultado } from "./pages";
 import {  useState } from "react";
 import { sortear } from "./services/SorteioService";
-import Rodape from "./components/Rodape";
+import { Rodape } from './components';
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from '@fortawesome/free-solid-svg-icons';
 

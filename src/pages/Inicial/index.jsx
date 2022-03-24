@@ -1,8 +1,4 @@
-import { Container, Seletor, Titulo } from "../../components";
-import Botao from "../../components/Botao";
-import CampoTexto from "../../components/CampoTexto";
-import Erro from "../../components/Erro";
-import Explicação from "../../components/Explicacao";
+import { Container, Seletor, Titulo, Botao, CampoTexto, Erro, Explicacao } from "../../components";
 import { InicialStyled } from "./styled";
 
 function Inicial({ 
@@ -44,7 +40,7 @@ function Inicial({
             }
             {
                 explicacaoAberta && 
-                    <Explicação 
+                    <Explicacao 
                         fechar={fecharExplicacao}
                     />
             }

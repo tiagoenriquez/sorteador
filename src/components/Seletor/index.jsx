@@ -38,7 +38,6 @@ function Seletor({ valor, categorias, funcao }) {
                 selecionado && 
                     <OpcoesContainerStyled>
                         <ListaOpcoesStyled>
-                            <OpcaoStyled onClick={selecionarCategoria}></OpcaoStyled>
                             {
                                 categorias.map((categoria) => 
                                     <OpcaoStyled
