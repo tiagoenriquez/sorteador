@@ -12,6 +12,6 @@ export const ErroStyled = styled.div`
 export const EtiquetaErroStyled = styled.label`
   font-size: 24px;
   font-family: ${(props) => props.theme.familiaFonte.principal};
-  color: white;
+  color: rgb(255, 255, 0);
   margin: ${(props) => props.theme.margens.principal};
 `;

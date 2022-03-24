@@ -3,6 +3,11 @@ import tema from "./tema";
 import { Inicial, Resultado } from "./pages";
 import {  useState } from "react";
 import { sortear } from "./services/SorteioService";
+import Rodape from "./components/Rodape";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fas } from '@fortawesome/free-solid-svg-icons';
+
+library.add(fas);
 
 function App() {
 
@@ -14,6 +19,7 @@ function App() {
   const [grupos, setGrupos] = useState("");
   const [elementoAlterado, setElementoAlterado] = useState("");
   const [erro, setErro] = useState({ existe: false, mensagem: ""} );
+  const [explicacaoAberta, setExplicacaoAberta] = useState(true);
   
   function handleElementoNovo(evento) {
     setElementoNovo(evento.target.value);
@@ -31,7 +37,7 @@ function App() {
     if (elementosAdicionados.includes(elementoDigitado)) {
       setErro({
         existe: true,
-        mensagem:'Esta aplicação não permite dois elementos com o mesmo nome!!!'
+        mensagem: 'Esta aplicação não permite dois elementos com o mesmo nome!!!'
       });
       return true;
     } else {
@@ -147,6 +153,12 @@ function App() {
     }
   }
 
+  function fecharExplicacao(evento) {
+    if (evento) {
+      setExplicacaoAberta(false);
+    }
+  }
+
   return (
     <ThemeProvider theme={tema}>
       {
@@ -176,8 +188,11 @@ function App() {
             alterarCategoria={alterarCategoria}
             erro={erro}
             fecharErro={fecharErro}
+            explicacaoAberta={explicacaoAberta}
+            fecharExplicacao={fecharExplicacao}
           />
       }
+      <Rodape />
     </ThemeProvider>
   );
 }

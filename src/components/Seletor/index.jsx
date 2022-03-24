@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { ListaOpcoesStyled, OpcaoStyled, OpcoesContainerStyled, SeletorContainerStyled, TituloSeletorStyled } from "./style";
+import { ListaOpcoesStyled, OpcaoStyled, OpcoesContainerStyled, SeletorContainerStyled, SetaStyled, TituloSeletorStyled } from "./style";
+import seta from "../../assets/seta-para-baixo.jpg";
 
 function Seletor({ valor, categorias, funcao }) {
 
@@ -7,7 +8,11 @@ function Seletor({ valor, categorias, funcao }) {
 
     function selecionarSeletor(evento) {
         if (evento) {
-            setSelecionado(true);
+            if (selecionado) {
+                setSelecionado(false);
+            } else {
+                setSelecionado(true);
+            }
         }
     }
 
@@ -20,7 +25,15 @@ function Seletor({ valor, categorias, funcao }) {
 
     return (
         <SeletorContainerStyled>
-            <TituloSeletorStyled onClick={selecionarSeletor}>Selecione uma categoria</TituloSeletorStyled>
+            <TituloSeletorStyled 
+                onClick={selecionarSeletor}
+            >
+                Selecione uma categoria 
+                <SetaStyled
+                    src={seta}
+                    alt='Imagem não pôde ser carregada'   
+                />
+                </TituloSeletorStyled>
             {
                 selecionado && 
                     <OpcoesContainerStyled>

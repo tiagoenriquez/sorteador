@@ -2,6 +2,7 @@ import { Container, Seletor, Titulo } from "../../components";
 import Botao from "../../components/Botao";
 import CampoTexto from "../../components/CampoTexto";
 import Erro from "../../components/Erro";
+import Explicação from "../../components/Explicacao";
 import { InicialStyled } from "./styled";
 
 function Inicial({ 
@@ -23,7 +24,9 @@ function Inicial({
     alterarElemento,
     alterarCategoria,
     erro,
-    fecharErro 
+    fecharErro,
+    explicacaoAberta,
+    fecharExplicacao
 }) {
 
     const NORMAL = 1;
@@ -37,6 +40,12 @@ function Inicial({
                     <Erro 
                         mensagem={erro.mensagem}
                         fechar={fecharErro}
+                    />
+            }
+            {
+                explicacaoAberta && 
+                    <Explicação 
+                        fechar={fecharExplicacao}
                     />
             }
             <Seletor

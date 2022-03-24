@@ -2,16 +2,17 @@ import styled from "styled-components";
 
 export const SeletorContainerStyled = styled.div`
   width: 192;
-  margin:${(props) => props.theme.margens.principal};
+  margin: ${(props) => props.theme.margens.principal};
 `;
 
 export const TituloSeletorStyled = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   height: ${(props) => props.theme.altura.principal};
   width: 192px;
-  margin: ${(props) => props.theme.margens.principal};
+  margin: 0;
+  padding: ${(props) => props.theme.margens.principal};
   font-size: ${(props) => props.theme.tamanhoFonte.principal};
   placeholder-color: ${(props) => props.theme.cores.claro};
   font-family: ${(props) => props.theme.familiaFonte.principal};
@@ -25,6 +26,7 @@ export const OpcoesContainerStyled = styled.div``;
 export const ListaOpcoesStyled = styled.ul`
   position: absolute;
   margin: 0;
+  padding-left: 0;
 `;
 
 export const OpcaoStyled = styled.li`
@@ -43,4 +45,9 @@ export const OpcaoStyled = styled.li`
   : hover {
     background-color: ${(props) => props.theme.cores.claro};
   }
+`;
+
+export const SetaStyled = styled.img`
+  height: 10px;
+  width: 10px;
 `;

@@ -23,10 +23,13 @@ function Botao({ perfil, etiqueta, informacao, funcao, classeBotao }) {
                     onClick={funcao}
                 >
                     {etiqueta}
-                    <InformacaoBotao
-                        informacao={informacao}
-                        aparecendo={mostraInformacao}
-                    />
+                    {
+                        informacao &&
+                        <InformacaoBotao
+                            informacao={informacao}
+                            aparecendo={mostraInformacao}
+                        />
+                    }
                 </BotaoNormalStyled>
             );
         case 2:
@@ -37,11 +40,13 @@ function Botao({ perfil, etiqueta, informacao, funcao, classeBotao }) {
                     onClick={funcao}
                 >
                     {etiqueta}
-                    <InformacaoBotao
-                        informacao={informacao}
-                        aparecendo={mostraInformacao}
-                    />
-                    <InformacaoBotao informacao={informacao} />
+                    {
+                        informacao &&
+                        <InformacaoBotao
+                            informacao={informacao}
+                            aparecendo={mostraInformacao}
+                        />
+                    }
                 </BotaoMaisStyled>
             );
         case 3:
@@ -54,11 +59,13 @@ function Botao({ perfil, etiqueta, informacao, funcao, classeBotao }) {
 
                 >
                     {etiqueta}
-                    <InformacaoBotao
-                        informacao={informacao}
-                        aparecendo={mostraInformacao}
-                    />
-                    <InformacaoBotao informacao={informacao} />
+                    {
+                        informacao &&
+                        <InformacaoBotao
+                            informacao={informacao}
+                            aparecendo={mostraInformacao}
+                        />
+                    }
                 </BotaoMenosStyled>
             );
         case 4:
@@ -69,7 +76,13 @@ function Botao({ perfil, etiqueta, informacao, funcao, classeBotao }) {
 
                 >
                     {etiqueta}
-                    <InformacaoBotao informacao={informacao} />
+                    {
+                        informacao &&
+                        <InformacaoBotao
+                            informacao={informacao}
+                            aparecendo={mostraInformacao}
+                        />
+                    }
                 </BotaoNormalMenosStyled>
             );
         default:
